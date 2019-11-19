@@ -1,0 +1,56 @@
+swagger: '2.0'
+info:
+    title: address
+    description: 'A brand new API with no content.  Go nuts!'
+    version: '1.0'
+consumes:
+    - application/json
+produces:
+    - application/json
+paths:
+    /addresses:
+        get:
+            summary: 'Lists all addresses'
+            responses:
+                '200':
+                    description: 'All addresses'
+        post:
+            summary: 'Adds an address'
+            responses:
+                '201':
+                    description: 'Address added'
+    '/addresses/{addressId}':
+        get:
+            summary: 'Gets an address'
+            responses:
+                '200':
+                    description: 'Address revert'
+        put:
+            summary: 'Updates an address'
+            responses:
+                '202':
+                    description: 'Address updated'
+        delete:
+            summary: 'Deletes an address'
+            responses:
+                '200':
+                    description: 'Address delete'
+        parameters:
+            -
+                name: addressId
+                in: path
+                required: true
+                type: string
+definitions:
+    Address:
+        title: 'Root Type for Address'
+        description: 'The root of the Address type''s schema.'
+        type: object
+        properties:
+            Id:
+                type: string
+            City:
+                type: string
+            State:
+                type: string
+        example: "{\n    \"Id\": \"12345\",\n    \"City\": \"Boston\",\n    \"State\": \"MA\"\n}"
