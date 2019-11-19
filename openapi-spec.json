@@ -1,0 +1,47 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Liam API",
+        "description": "A brand new API with no content.  Go nuts!",
+        "version": "1.0"
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/liam/{nric}": {
+            "get": {
+                "summary": "Get the NRIC",
+                "responses": {
+                    "200": {
+                        "description": "Record found."
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "name": "nric",
+                    "in": "path",
+                    "required": true,
+                    "type": "number"
+                }
+            ]
+        }
+    },
+    "definitions": {
+        "nric": {
+            "title": "Root Type for nric",
+            "description": "The root of the nric type's schema.",
+            "type": "object",
+            "properties": {
+                "ID": {
+                    "type": "string"
+                }
+            },
+            "example": "{\n    \"ID\": \"860211082656\"\n    \"Status\": \"true\"\n}"
+        }
+    }
+}
